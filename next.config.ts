@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  experimental: {
+    appDir: true, // Pastikan App Directory aktif
+    suspense: true, // Aktifkan Suspense secara eksplisit
+  },
+  reactStrictMode: true, // Debug rendering
 };
 
-export default nextConfig;
+module.exports = nextConfig;
