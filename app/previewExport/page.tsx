@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import { Suspense } from "react";
+
 
 interface FormData {
   noSurat: string;
@@ -185,6 +187,8 @@ const PreviewExport = () => {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <div>
       <button
         onClick={handleExport}
@@ -372,6 +376,9 @@ const PreviewExport = () => {
         </div>
       </div>
     </div>
+    </Suspense>
+
+
   );
 };
 
